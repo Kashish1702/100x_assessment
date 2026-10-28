@@ -53,7 +53,7 @@ async def ws_endpoint(ws: WebSocket):
     await handle_live(ws)
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def index():
     return FileResponse(BASE / "static" / "index.html")
 
